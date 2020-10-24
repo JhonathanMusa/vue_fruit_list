@@ -9,6 +9,7 @@ export default new Vuex.Store({
       {nombre: "Manzana", cantidad: 0},
       {nombre: "Pera", cantidad: 0},
       {nombre: "Naranja", cantidad: 0},
+      {nombre: "Mangos", cantidad: 0},
     ]
   },
   mutations: {

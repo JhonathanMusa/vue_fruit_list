@@ -10,7 +10,7 @@
         {{ index }} {{ item.nombre }}
         <span class="badge badge-primary badge-pill"> {{ item.cantidad }}</span>
       </li>
-      <button class="btn btn-danger btn-block" @click="reiniciar">Reiniciar</button>
+      <button class="btn btn-success btn-block" @click="reiniciar">Reiniciar</button>
     </ul>
   </div>
 </template>
