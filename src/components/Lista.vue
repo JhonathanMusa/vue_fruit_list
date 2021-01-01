@@ -7,10 +7,17 @@
         @click="aumentar(index)"
         class="list-group-item d-flex justify-content-between align-items-center"
       >
-        {{ index }} {{ item.nombre }}
-        <span class="badge badge-primary badge-pill"> {{ item.cantidad }}</span>
+        {{ index }} - {{ item.nombre }}
+        <span v-if="item.cantidad === 0" class="badge badge-primary badge-pill">
+          {{ item.cantidad }}</span
+        >
+        <span v-else class="badge badge-success badge-pill">
+          {{ item.cantidad }}</span
+        >
       </li>
-      <button class="btn btn-success btn-block" @click="reiniciar">Reiniciar</button>
+      <button class="btn btn-primary btn-block" @click="reiniciar">
+        Reiniciar
+      </button>
     </ul>
   </div>
 </template>
@@ -22,10 +29,10 @@ export default {
   name: "Lista",
   computed: {
     ...mapState(["frutas"]),
-    arrayOrdenado(){
-        // Ordena de menor a mayor
-        return this.frutas.sort((a, b)=> b.cantidad - a.cantidad )
-    }
+    arrayOrdenado() {
+      // Ordena de menor a mayor
+      return this.frutas.sort((a, b) => b.cantidad - a.cantidad);
+    },
   },
   methods: {
     ...mapMutations(["aumentar", "reiniciar"]),
