@@ -1,5 +1,7 @@
 <template>
   <div>
+    <input class="form-control" type="text" v-model="element" />
+    <p>{{ element }}</p>
     <ul class="list-group">
       <li
         v-for="(item, index) of arrayOrdenado"
@@ -37,5 +39,11 @@ export default {
   methods: {
     ...mapMutations(["aumentar", "reiniciar"]),
   },
+  data() {
+    return {
+      element: "",
+    };
+  },
 };
 </script>
+ 
